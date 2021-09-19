@@ -1,11 +1,14 @@
-import React from 'react'
+import { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
 import App from './App'
 
+const root = document.createElement('div')
+root.setAttribute('id', '3d-bubble-background')
+document.body.appendChild(root)
+
 ReactDOM.render(
-  <React.StrictMode>
+  <StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </StrictMode>,
+  root
 )
