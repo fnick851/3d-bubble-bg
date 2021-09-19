@@ -88,7 +88,7 @@ function Scene() {
       shadows
       camera={{ fov: 75, position: [0, 0, 60], near: 10, far: 150 }}
     >
-      <color attach="background" args={[BABY_BLUE]} />
+      <color attach="background" args={['aliceblue']} />
       <fog attach="fog" args={[BABY_BLUE, 50, 100]} />
       <ambientLight intensity={1.5} />
       <pointLight position={[100, 10, -50]} intensity={20} castShadow />
