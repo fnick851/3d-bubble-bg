@@ -6,6 +6,7 @@ import reactJsx from 'vite-react-jsx'
 export default defineConfig({
   plugins: [reactRefresh(), reactJsx()],
   build: {
+    outDir: 'docs',
     rollupOptions: {
       output: {
         entryFileNames: '3d-bubble-background.js',
@@ -13,4 +14,5 @@ export default defineConfig({
       },
     },
   },
+  base: '/3d-bubble-bg/',
 })

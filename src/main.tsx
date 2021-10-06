@@ -2,13 +2,16 @@ import { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 
+const target = document.querySelector('.threed-bubble-bg') as HTMLElement
+target.style.position = 'relative'
 const root = document.createElement('div')
-root.setAttribute('id', '3d-bubble-background')
-root.style.position = 'fixed'
+root.style.position = 'absolute'
 root.style.top = '0'
 root.style.left = '0'
+root.style.height = '100%'
+root.style.width = '100%'
 root.style.zIndex = '-1'
-document.body.appendChild(root)
+target.appendChild(root)
 
 ReactDOM.render(
   <StrictMode>

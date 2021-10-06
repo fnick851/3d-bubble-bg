@@ -86,7 +86,7 @@ function Scene() {
   return (
     <Canvas
       shadows
-      camera={{ fov: 75, position: [0, 0, 60], near: 10, far: 150 }}
+      camera={{ fov: 100, position: [0, 0, 100], near: 0.01, far: 200 }}
     >
       <color attach="background" args={['aliceblue']} />
       <fog attach="fog" args={[BABY_BLUE, 50, 100]} />
