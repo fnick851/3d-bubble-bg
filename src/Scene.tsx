@@ -4,7 +4,7 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { Instances, Instance, ContactShadows } from '@react-three/drei'
 import { EffectComposer, SSAO } from '@react-three/postprocessing'
 
-const BABY_BLUE = '#89CFF0'
+const YELLOW = 'orange'
 
 const particles = Array.from({ length: 200 }, () => ({
   factor: MathUtils.randInt(90, 100),
@@ -74,7 +74,7 @@ function Bubbles() {
       position={[0, 10, 0]}
     >
       <sphereBufferGeometry args={[1, 32, 32]} />
-      <meshStandardMaterial roughness={0.5} color={BABY_BLUE} />
+      <meshStandardMaterial roughness={0.5} color={'khaki'} />
       {particles.map((data, i) => (
         <Bubble key={i} {...data} />
       ))}
@@ -88,11 +88,11 @@ function Scene() {
       shadows
       camera={{ fov: 100, position: [0, 0, 100], near: 0.01, far: 200 }}
     >
-      <color attach="background" args={['aliceblue']} />
-      <fog attach="fog" args={[BABY_BLUE, 50, 100]} />
-      <ambientLight intensity={1.5} />
+      <color attach="background" args={['khaki']} />
+      <fog attach="fog" args={[YELLOW, 50, 100]} />
+      <ambientLight intensity={1} />
       <pointLight position={[100, 10, -50]} intensity={20} castShadow />
-      <pointLight position={[-100, -100, -100]} intensity={10} color="blue" />
+      <pointLight position={[-100, -100, -100]} intensity={10} color="khaki" />
       <Bubbles />
       <ContactShadows
         rotation={[Math.PI / 2, 0, 0]}
@@ -109,7 +109,7 @@ function Scene() {
           radius={10}
           luminanceInfluence={0.1}
           // @ts-ignore
-          color="blue"
+          color={YELLOW}
           intensity={20}
         />
       </EffectComposer>
